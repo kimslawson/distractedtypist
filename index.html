@@ -1,0 +1,89 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Distracted Typist &mdash; fixes fingers-on-wrong-keys errors</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header>
+<h1>Distracted Typist</h1>
+<p class="tagline">Fixes fingers-on-wrong-keys errors</p>
+</header>
+
+<section class="input third-width">
+<h2>Fat-fingered text:</h2>
+<textarea id="input" placeholder="paste your distracted typing here"></textarea>
+<p class="instructions">Paste your fat-fingered text above.</p>
+</section>
+
+<section class="translation third-width">
+<h2>Translation:</h2>
+<form id="translate" action="">
+    <table>
+        <tr>
+            <td>
+                <input type="radio" name="translation" value="nw" id="nw1">
+                <label for="nw1">&nwarr;</label>
+            </td>
+            <td>
+                <input type="radio" name="translation" value="n" id="n1">
+                <label for="n1">&uarr;</label>
+            </td>
+            <td>
+                <input type="radio" name="translation" value="ne" id="ne1">
+                <label for="ne1">&nearr;</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="radio" name="translation" value="w" id="w1">
+                <label for="w1">&larr;</label>
+            </td>
+            <td>
+                <input type="radio" name="translation" value="none" id="none1" checked>
+                <label for="none1">&#8416;</label>
+            </td>
+            <td>
+                <input type="radio" name="translation" value="e" id="e1">
+                <label for="e1">&rarr;</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="radio" name="translation" value="sw" id="sw1">
+                <label for="sw1">&swarr;</label>
+            </td>
+            <td>
+                <input type="radio" name="translation" value="s" id="s1">
+                <label for="s1">&darr;</label>
+            </td>
+            <td>
+                <input type="radio" name="translation" value="se" id="se1">
+                <label for="se1">&searr;</label> 
+            </td>
+        </tr>
+    </table>
+    <div class="options">
+        <label class="modifier">Modifier: </label>
+        <select name="modifier" class="modifier">
+            <option value="none" selected>none</option>
+            <option value="shift">Shift</option>
+            <option value="caps">CAPS LOCK</option>
+        </select>
+    </div>
+</form>
+</section>
+
+<section class="output third-width">
+<h2>Corrected text:</h2>
+<textarea id="output" placeholder=""></textarea>
+<p class="instructions">Copy the corrected text above.</p>
+</section>
+
+<footer>
+</footer>
+
+<script src="translate.js"></script>
+</body>
+</html>

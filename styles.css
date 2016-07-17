@@ -1,0 +1,91 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #ccc;
+    color: #333;
+}
+section {
+    float: left;
+}
+section * + * {
+    margin-top: 20px;
+}
+section *, header * {
+    padding-left: 10px;
+}
+div.options * {
+    margin-top: 20px;
+}
+.full-width { 
+    width: 100%;
+}
+.half-width { 
+    width: 50%;
+}
+.third-width { 
+    width: 33.3333%;
+}
+textarea {
+    width: 100%;
+    height: 50%;
+}
+table {
+    table-layout: auto;
+}
+
+/* make radio buttons look like pushbuttons, from http://viralpatel.net/blogs/css-radio-button-checkbox-background/ */
+/*
+  Hide radio button (the round disc)
+  we will use just the label to create pushbutton effect
+*/
+input[type=radio] {
+    display: none; 
+}
+/*
+  Change the look'n'feel of labels (which are adjacent to radiobuttons).
+  Add some margin, padding to label
+*/
+input[type=radio] + label {
+    display:inline-block;
+    margin: 0px;
+    padding: 4px 4px;
+    background-color: #e7e7e7;
+    border-color: #ddd;
+    min-width: 1em;
+    line-height: 1.5em;
+}
+/*
+ Change background color for label next to checked radio button
+ to make it look like highlighted button
+*/
+input[type=radio]:checked + label { 
+   background-image: none;
+    background-color:#d0d0d0;
+}
+
+label {
+    margin-right: 10px;
+}
+.modifier {
+    float: left;
+}
+tr, tr td {
+    padding-left: 0;
+    text-align: center;
+    vertical-align: middle;
+}
+td:before{
+    content:'';
+    padding:50% 0; /* vertical value as  100% equals width */
+    display:inline-block;
+}
+@media only screen and (max-width: 568px) { /* iphone 5 landscape orientation */
+    section {
+        float: none;
+    }
+    .half-width, .third-width {
+        width: 100%;
+    }
+}
+
