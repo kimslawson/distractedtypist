@@ -3,6 +3,14 @@ body {
     padding: 0;
     overflow: hidden;
     background-color: #ccc;
+
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+10,cccccc+100 */
+    background: #ffffff; /* Old browsers */
+    background: -moz-radial-gradient(center, ellipse cover,  #ffffff 10%, #cccccc 100%); /* FF3.6-15 */
+    background: -webkit-radial-gradient(center, ellipse cover,  #ffffff 10%,#cccccc 100%); /* Chrome10-25,Safari5.1-6 */
+    background: radial-gradient(ellipse at center,  #ffffff 10%,#cccccc 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#cccccc',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
     color: #333;
     font-family: 'Corben', cursive;
     font-family: 'Merriweather', serif;
@@ -25,10 +33,14 @@ footer .maine {
     vertical-align: middle;
 }
 .easteregg {
-            transition: all .2s ease-in-out;
+    display: inline-block;
+            transition: all 0.2s ease-in-out;
+            transform-origin: 50% 80%;
 }
 .easteregg:hover, .easteregg:active {
-            transform: scale(1.5);
+    -webkit-transform: scale(4);
+        -ms-transform: scale(4);
+            transform: scale(4);
 }
 
 header, footer {
@@ -110,11 +122,11 @@ input[type=radio] + label {
     display:inline-block;
     margin: 0px;
     padding: 4px 4px;
-    background-color: #eee;
     outline: 1px solid #999;
     min-width: 1em;
     line-height: 1.5em;
     font-family: sans-serif;
+    background-color: #eee;
 }
 /*
  Change background color for label next to checked radio button
