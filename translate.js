@@ -1,4 +1,14 @@
-function translateText(direction) {
+function inArray(needle,haystack)
+{
+    var count=haystack.length;
+    for(var i=0;i<count;i++)
+    {
+        if(haystack[i]===needle){return true;}
+    }
+    return false;
+}
+
+function translateText(leftdirection, rightdirection) {
     /* array indices for accessing by cardinal direction */
     var directions = { nw: 0, n: 1, ne: 2, 
                        w: 3, none: 4, e: 5, 
@@ -150,7 +160,7 @@ function translateText(direction) {
                    '.','/','shift',
                    '','',''];
 
-    // group keys by side of keyboard; space belongs to neither (or is it both?)
+    // group keys by side of keyboard; space belongs to neither (or is it both? #deepthoughts)
     var lefties = [ '`','1','2','3','4','5',
                     'tab','q','w','e','r','t',
                     'caps lock','a','s','d','f','g',
@@ -167,84 +177,94 @@ function translateText(direction) {
     // get input from textarea
     var input = document.getElementById("input").value;
 
-    // direction is passed to this function from clicked radio button
-//alert(directions[direction]);
-
     // iterate over input string and append to output string
     for (var index = 0, len = input.length; index < len; index++) {
 //      alert(input[index]);
         var letter = input[index];
+
+        // is letter on the left or right hand side of keyboard?
+        // i.e., to which hand does it belong?
+        // set translation direction accordingly
+        if (inArray(letter, lefties)) {
+            var direction = leftdirection;
+        } else if (inArray(letter, righties)) {
+            var direction = rightdirection;
+        } else {
+            console.log("neither!!");
+        }
+        console.log(direction);
+
         switch (letter) { // special cases
             case " ":
-                var substitution = space[directions[direction]];
+                var substitution = space[direction];
                 break;
             case "`":
-                var substitution = backtick[directions[direction]];
+                var substitution = backtick[direction];
                 break;
             case "1":
-                var substitution = one[directions[direction]];
+                var substitution = one[direction];
                 break;
             case "2":
-                var substitution = two[directions[direction]];
+                var substitution = two[direction];
                 break;
             case "3":
-                var substitution = three[directions[direction]];
+                var substitution = three[direction];
                 break;
             case "4":
-                var substitution = four[directions[direction]];
+                var substitution = four[direction];
                 break;
             case "5":
-                var substitution = five[directions[direction]];
+                var substitution = five[direction];
                 break;
             case "6":
-                var substitution = six[directions[direction]];
+                var substitution = six[direction];
                 break;
             case "7":
-                var substitution = seven[directions[direction]];
+                var substitution = seven[direction];
                 break;
             case "8":
-                var substitution = eight[directions[direction]];
+                var substitution = eight[direction];
                 break;
             case "9":
-                var substitution = nine[directions[direction]];
+                var substitution = nine[direction];
                 break;
             case "0":
-                var substitution = zero[directions[direction]];
+                var substitution = zero[direction];
                 break;
             case "-":
-                var substitution = minus[directions[direction]];
+                var substitution = minus[direction];
                 break;
             case "=":
-                var substitution = equals[directions[direction]];
+                var substitution = equals[direction];
                 break;
             case "[":
-                var substitution = leftbracket[directions[direction]];
+                var substitution = leftbracket[direction];
                 break;
             case "]":
-                var substitution = rightbracket[directions[direction]];
+                var substitution = rightbracket[direction];
                 break;
             case "\\":
-                var substitution = backslash[directions[direction]];
+                var substitution = backslash[direction];
                 break;
             case ";":
-                var substitution = semicolon[directions[direction]];
+                var substitution = semicolon[direction];
                 break;
             case "\'":
-                var substitution = tick[directions[direction]];
+                var substitution = tick[direction];
                 break;
             case ",":
-                var substitution = comma[directions[direction]];
+                var substitution = comma[direction];
                 break;
             case ".":
-                var substitution = period[directions[direction]];
+                var substitution = period[direction];
                 break;
             case "/":
-                var substitution = backslash[directions[direction]];
+                var substitution = backslash[direction];
                 break;
             case (letter.match(/^[A-Za-z]$/) || {}).input:
                 // just a letter, carry on, nothing to see here.
                 // case regex matching from http://stackoverflow.com/a/18881169/1821016
-                var substitution = eval(letter.toLowerCase())[directions[direction]];
+                var substitution = eval(letter.toLowerCase())[direction];
                 break;
             default: // otherwise just pass the character through unchanged
                 var substitution = letter;
@@ -265,21 +285,64 @@ function translateText(direction) {
     document.getElementById("output").value = output;
 }
 
-// get list of radio buttons with name 'translate'
+// get list of radio buttons with name 'translate' - left hand
 var translate = document.forms['translate'].elements['translation'];
+// get list of radio buttons with name 'translate2' - right hand
+var translate2 = document.forms['translate'].elements['translation2'];
 
-// loop through list
+// loop through list of radio buttons
+// first the left
 for (var index=0, len=translate.length; index<len; index++) {
     translate[index].onclick = function() { // assign onclick handler function to each
+
         // change text in result area based on which button was clicked
-        var keys = document.getElementById("lefthandkeys").innerHTML;
-        var datakeys = this.getAttribute("data-keys");
-console.log(keys += datakeys);
         document.getElementById("lefthandkeys").innerHTML = this.getAttribute("data-keys");
 
-        // call translate function with chosen cardinal direction
-        console.log(this.value);
-        translateText(this.value);
+        // check left hand buttons first
+        for (var indexinner=0, leninner=translate.length; indexinner<leninner; indexinner++) {
+            if (translate[indexinner].checked) {
+                var translateindex = indexinner; // remember that which is left
+            }
+        }
+        // then check right hand buttons
+        for (var indexinner=0, leninner=translate2.length; indexinner<leninner; indexinner++) {
+            if (translate2[indexinner].checked) {
+                var translate2index = indexinner; // and also that which is right
+            }
+        }
+
+        // call translate function with chosen cardinal directions
+//console.log(this.value);
+//console.log(translateindex);
+//console.log(translate2index);
+        translateText(translateindex, translate2index);
+    };
+};
+// then the right
+for (var index=0, len=translate2.length; index<len; index++) {
+    translate2[index].onclick = function() { // assign onclick handler function to each
+
+        // change text in result area based on which button was clicked
+        document.getElementById("righthandkeys").innerHTML = this.getAttribute("data-keys");
+
+        // check left hand buttons first
+        for (var indexinner=0, leninner=translate.length; indexinner<leninner; indexinner++) {
+            if (translate[indexinner].checked) {
+                var translateindex = indexinner; // remember that which is left
+            }
+        }
+        // then check right hand buttons
+        for (var indexinner=0, leninner=translate2.length; indexinner<leninner; indexinner++) {
+            if (translate2[indexinner].checked) {
+                var translate2index = indexinner; // and also that which is right
+            }
+        }
+
+        // call translate function with chosen cardinal directions
+//console.log(this.value);
+//console.log(translateindex);
+//console.log(translate2index);
+        translateText(translateindex, translate2index);
     };
 };
 
