@@ -1,7 +1,6 @@
 body {
     margin: 0;
     padding: 0;
-    overflow: hidden;
     background-color: #ccc;
 
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+10,cccccc+100 */
@@ -27,6 +26,7 @@ body {
      font-weight: normal;
      font-style: normal;
 }
+
 footer .maine {
     font-family: 'StateFaceRegular';
     font-size: 2em;
@@ -35,19 +35,30 @@ footer .maine {
 .easteregg {
     display: inline-block;
             transition: all 0.2s ease-in-out;
-            transform-origin: 50% 80%;
+            transform-origin: 50% 72%;
 }
 .easteregg:hover, .easteregg:active {
-    -webkit-transform: scale(4);
-        -ms-transform: scale(4);
-            transform: scale(4);
+    -webkit-transform: scale(3);
+        -ms-transform: scale(3);
+            transform: scale(3);
+}
+.easteregg:hover:after, .easteregg:active:after {
+    transition: opacity 0.2s ease-in-out;
+    position:absolute;
+    top: 0.75em;
+    left: 0.3em;
+    content: "\2605"; /* solid star */
+    color: gold;
+    font-size: 0.5em;
 }
 
 header, footer {
     text-align: center;
 }
 footer {
+    clear: both;
     font-size: 0.75em;
+    padding-top: 0.5em;
 }
 section {
     float: left;
@@ -63,8 +74,14 @@ h1 {
     font-size: 3em;
     margin: 0;
 }
+h3 {
+    margin-top: 0;
+}
 p.tagline {
     margin-top: 0;
+}
+p.instructions {
+    font-size: 0.75em;
 }
 div.options *, div.result * {
     margin-top: 20px;
@@ -90,9 +107,14 @@ table {
     table-layout: auto;
     padding: 0 5px;
 }
+div.hands {
+    margin: 0 auto;
+    display: table;
+}
 div.hand {
-    float: left;
+    float: left; /* just in case display: table/table-cell is not supported */
     margin-top: 0;
+    display: table-cell;
 }
 div.options, div.result {
     display: inline-block;
@@ -161,6 +183,16 @@ h1, h2, h3, h4, h5 {
     font-family: 'Oswald', sans-serif;
 }
 
+.input h2 {
+    text-align: left;
+}
+.translation h2 {
+    text-align: center;
+}
+.output h2, .output .instructions {
+    text-align: right;
+}
+
 /* fix viewport on iphone */
 @media only screen and (max-width: 768px) { /* smaller screens */
     section {
@@ -175,6 +207,9 @@ h1, h2, h3, h4, h5 {
     }
     h1 {
         font-size: 2.5em;
+    }
+    .input h2, .translation h2, .output h2, .output .instructions {
+        text-align: left;
     }
 }
 
