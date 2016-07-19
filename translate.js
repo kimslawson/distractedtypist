@@ -271,6 +271,12 @@ var translate = document.forms['translate'].elements['translation'];
 // loop through list
 for (var index=0, len=translate.length; index<len; index++) {
     translate[index].onclick = function() { // assign onclick handler function to each
+        // change text in result area based on which button was clicked
+        var keys = document.getElementById("lefthandkeys").innerHTML;
+        var datakeys = this.getAttribute("data-keys");
+console.log(keys += datakeys);
+        document.getElementById("lefthandkeys").innerHTML = this.getAttribute("data-keys");
+
         // call translate function with chosen cardinal direction
         console.log(this.value);
         translateText(this.value);
