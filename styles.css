@@ -193,7 +193,6 @@ h1, h2, h3, h4, h5 {
     text-align: right;
 }
 
-/* fix viewport on iphone */
 @media only screen and (max-width: 768px) { /* smaller screens */
     section {
         float: none;
@@ -210,6 +209,23 @@ h1, h2, h3, h4, h5 {
     }
     .input h2, .translation h2, .output h2, .output .instructions {
         text-align: left;
+    }
+}
+@media only screen and (max-width: 480px) { /* break too-wide content */
+    .copyright, .designed {
+        display: block;
+    }
+    .designed {
+        top: -1.5em;
+        position: relative;
+    }
+    .movesmall {
+        display: block;
+        position: relative;
+        top: 5em;
+    }
+    footer {
+        margin-bottom: 7em;
     }
 }
 
