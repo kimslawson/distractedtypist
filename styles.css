@@ -41,7 +41,7 @@ section {
     float: left;
 }
 section * + * {
-    margin-top: 10px;
+    margin-top: 0px;
 }
 h1, h2, h3, p, div.options, textarea {
     padding-left: 10px;
