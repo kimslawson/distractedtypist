@@ -197,6 +197,7 @@ h1, h2, h3, h4, h5 {
     section {
         float: none;
         clear: both;
+        margin-top: 2em;
     }
     .half-width, .third-width {
         width: 100%;
