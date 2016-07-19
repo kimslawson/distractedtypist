@@ -264,7 +264,11 @@ function translateText(leftdirection, rightdirection) {
             case (letter.match(/^[A-Za-z]$/) || {}).input:
                 // just a letter, carry on, nothing to see here.
                 // case regex matching from http://stackoverflow.com/a/18881169/1821016
-                var substitution = eval(letter.toLowerCase())[direction];
+                if (letter == letter.toUpperCase()) {
+                    var substitution = eval(letter.toLowerCase())[direction].toUpperCase();
+                } else if (letter == letter.toLowerCase()){
+                    var substitution = eval(letter.toLowerCase())[direction];
+                }
                 break;
             default: // otherwise just pass the character through unchanged
                 var substitution = letter;
