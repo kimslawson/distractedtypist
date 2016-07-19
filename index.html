@@ -2,6 +2,9 @@
 <head>
     <meta charset="utf-8" />
     <title>Distracted Typist &mdash; fixes fingers-on-wrong-keys errors</title>
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Corben:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
     <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -21,50 +24,102 @@
 <h2>Translation:</h2>
 <form id="translate" action="">
 <!-- use unicode "variation selector" U+FE0E (&#xFE0E;) as per http://meta.stackexchange.com/questions/261074/prev-next-triangles-rendered-as-emojis-on-ios-devices -->
-    <table>
-        <tr>
-            <td>
-                <input type="radio" name="translation" value="nw" id="nw1">
-                <label for="nw1">&nwarr;&#xFE0E;</label>
-            </td>
-            <td>
-                <input type="radio" name="translation" value="n" id="n1">
-                <label for="n1">&uarr;&#xFE0E;/label>
-            </td>
-            <td>
-                <input type="radio" name="translation" value="ne" id="ne1">
-                <label for="ne1">&nearr;&#xFE0E;</label>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <input type="radio" name="translation" value="w" id="w1">
-                <label for="w1">&larr;&#xFE0E;</label>
-            </td>
-            <td>
-                <input type="radio" name="translation" value="none" id="none1" checked>
-                <label for="none1">&#8416;&#xFE0E;</label>
-            </td>
-            <td>
-                <input type="radio" name="translation" value="e" id="e1">
-                <label for="e1">&rarr;&#xFE0E;</label>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <input type="radio" name="translation" value="sw" id="sw1">
-                <label for="sw1">&swarr;&#xFE0E;</label>
-            </td>
-            <td>
-                <input type="radio" name="translation" value="s" id="s1">
-                <label for="s1">&darr;&#xFE0E;</label>
-            </td>
-            <td>
-                <input type="radio" name="translation" value="se" id="se1">
-                <label for="se1">&searr;&#xFE0E;</label> 
-            </td>
-        </tr>
-    </table>
+    <div class="left hand">
+        <h3>Left Hand:</h3>
+        <table>
+            <tr>
+                <td>
+                    <input type="radio" name="translation" value="nw" id="nw1">
+                    <label for="nw1">&nwarr;&#xFE0E;</label>
+                </td>
+                <td>
+                    <input type="radio" name="translation" value="n" id="n1">
+                    <label for="n1">&uarr;&#xFE0E;</label>
+                </td>
+                <td>
+                    <input type="radio" name="translation" value="ne" id="ne1">
+                    <label for="ne1">&nearr;&#xFE0E;</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="radio" name="translation" value="w" id="w1">
+                    <label for="w1">&larr;&#xFE0E;</label>
+                </td>
+                <td>
+                    <input type="radio" name="translation" value="none" id="none1" checked>
+                    <label for="none1">&#8416;&#xFE0E;</label>
+                </td>
+                <td>
+                    <input type="radio" name="translation" value="e" id="e1">
+                    <label for="e1">&rarr;&#xFE0E;</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="radio" name="translation" value="sw" id="sw1">
+                    <label for="sw1">&swarr;&#xFE0E;</label>
+                </td>
+                <td>
+                    <input type="radio" name="translation" value="s" id="s1">
+                    <label for="s1">&darr;&#xFE0E;</label>
+                </td>
+                <td>
+                    <input type="radio" name="translation" value="se" id="se1">
+                    <label for="se1">&searr;&#xFE0E;</label> 
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="right hand">
+        <h3>Right Hand:</h3>
+        <table>
+            <tr>
+                <td>
+                    <input type="radio" name="translation2" value="nw" id="nw2">
+                    <label for="nw2">&nwarr;&#xFE0E;</label>
+                </td>
+                <td>
+                    <input type="radio" name="translation2" value="n" id="n2">
+                    <label for="n2">&uarr;&#xFE0E;</label>
+                </td>
+                <td>
+                    <input type="radio" name="translation2" value="ne" id="ne2">
+                    <label for="ne2">&nearr;&#xFE0E;</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="radio" name="translation2" value="w" id="w2">
+                    <label for="w2">&larr;&#xFE0E;</label>
+                </td>
+                <td>
+                    <input type="radio" name="translation2" value="none" id="none2" checked>
+                    <label for="none2">&#8416;&#xFE0E;</label>
+                </td>
+                <td>
+                    <input type="radio" name="translation2" value="e" id="e2">
+                    <label for="e2">&rarr;&#xFE0E;</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="radio" name="translation2" value="sw" id="sw2">
+                    <label for="sw2">&swarr;&#xFE0E;</label>
+                </td>
+                <td>
+                    <input type="radio" name="translation2" value="s" id="s2">
+                    <label for="s2">&darr;&#xFE0E;</label>
+                </td>
+                <td>
+                    <input type="radio" name="translation2" value="se" id="se2">
+                    <label for="se2">&searr;&#xFE0E;</label> 
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="result">
+        <p>My left hand was on <code><strong>a</strong><strong>s</strong><strong>d</strong><strong>f</strong></code> and my right hand was on <code><strong>j</strong><strong>k</strong><strong>l</strong><strong>;</strong></code>.</p></div>
     <div class="options">
         <label class="modifier">Modifier: </label>
         <select name="modifier" class="modifier">

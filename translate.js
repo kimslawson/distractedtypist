@@ -86,6 +86,79 @@ function translateText(direction) {
     var space = [ ' ',' ',' ',
                   ' ',' ',' ',
                   ' ',' ',' '];
+    var backtick = [ '','','',
+                     '','`','1',
+                     '','tab','q'];
+    var one = [ '','','',
+                '`','1','2',
+                'tab','q','w'];
+    var two = [ '','','',
+                '1','2','3',
+                'q','w','e'];
+    var three = [ '','','',
+                  '2','3','4',
+                  'w','e','r'];
+    var four = [ '','','',
+                 '3','4','5',
+                 'e','r','t'];
+    var five = [ '','','',
+                 '4','5','6',
+                 'r','t','y'];
+    var six = [ '','','',
+                '5','6','7',
+                't','y','u'];
+    var seven = [ '','','',
+                  '6','7','8',
+                  'y','u','i'];
+    var eight = [ '','','',
+                  '7','8','9',
+                  'u','i','o'];
+    var nine = [ '','','',
+                 '8','9','0',
+                 'i','o','p'];
+    var zero = [ '','','',
+                 '9','0','-',
+                 'o','p','['];
+    var minus = [ '','','',
+                  '0','-','=',
+                  'p','[',']'];
+    var equals = [ '','','',
+                   '-','=','backspace',
+                   '[',']','\\'];
+    var leftbracket = [ '0','-','=',
+                        'p','[',']',
+                        ';','\'','enter'];
+    var rightbracket = [ '-','=','backspace',
+                         '[',']','\\',
+                         '\'','enter','enter'];
+    var backslash = [ '=','backspace','',
+                      ']','\\','',
+                      'enter','enter',''];
+    var semicolon = [ 'o','p','[',
+                      'l',';','\'',
+                      '.','/','shift'];
+    var tick = [ 'p','[',']',
+                 ';','\'','enter',
+                 '/','shift','shift'];
+    var comma = [ 'j','k','l',
+                  'm',',','.',
+                  ' ','',''];
+    var period = [ 'k','l',';',
+                   ',','.','/',
+                   '','',''];
+    var slash = [ 'l',';','',
+                   '.','/','shift',
+                   '','',''];
+
+    // group keys by side of keyboard; space belongs to neither (or is it both?)
+    var lefties = [ '`','1','2','3','4','5',
+                    'tab','q','w','e','r','t',
+                    'caps lock','a','s','d','f','g',
+                    'left shift','z','x','c','v','b'];
+    var righties = [ '6','7','8','9','0','-','=','backspace',
+                     'y','u','i','o','p','[',']','\\',
+                     'h','j','k','l',';','\'','enter',
+                     'n','m',',','.','/','right shift'];
 
     // set up defaults
     var output = "";
@@ -105,8 +178,76 @@ function translateText(direction) {
             case " ":
                 var substitution = space[directions[direction]];
                 break;
-            default: // otherwise just use the variable name from the alphabetic letter
+            case "`":
+                var substitution = backtick[directions[direction]];
+                break;
+            case "1":
+                var substitution = one[directions[direction]];
+                break;
+            case "2":
+                var substitution = two[directions[direction]];
+                break;
+            case "3":
+                var substitution = three[directions[direction]];
+                break;
+            case "4":
+                var substitution = four[directions[direction]];
+                break;
+            case "5":
+                var substitution = five[directions[direction]];
+                break;
+            case "6":
+                var substitution = six[directions[direction]];
+                break;
+            case "7":
+                var substitution = seven[directions[direction]];
+                break;
+            case "8":
+                var substitution = eight[directions[direction]];
+                break;
+            case "9":
+                var substitution = nine[directions[direction]];
+                break;
+            case "0":
+                var substitution = zero[directions[direction]];
+                break;
+            case "-":
+                var substitution = minus[directions[direction]];
+                break;
+            case "=":
+                var substitution = equals[directions[direction]];
+                break;
+            case "[":
+                var substitution = leftbracket[directions[direction]];
+                break;
+            case "]":
+                var substitution = rightbracket[directions[direction]];
+                break;
+            case "\\":
+                var substitution = backslash[directions[direction]];
+                break;
+            case ";":
+                var substitution = semicolon[directions[direction]];
+                break;
+            case "\'":
+                var substitution = tick[directions[direction]];
+                break;
+            case ",":
+                var substitution = comma[directions[direction]];
+                break;
+            case ".":
+                var substitution = period[directions[direction]];
+                break;
+            case "/":
+                var substitution = backslash[directions[direction]];
+                break;
+            case (letter.match(/^[A-Za-z]$/) || {}).input:
+                // just a letter, carry on, nothing to see here.
+                // case regex matching from http://stackoverflow.com/a/18881169/1821016
                 var substitution = eval(letter.toLowerCase())[directions[direction]];
+                break;
+            default: // otherwise just pass the character through unchanged
+                var substitution = letter;
         }
         switch (substitution) { // special cases
             case "caps lock": // toggle the case until next time
