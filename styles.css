@@ -120,13 +120,16 @@ div.options, div.result {
     display: inline-block;
     clear: both;
 }
+.result {
+    line-height: 1.55em;
+}
 .result strong {
     font-weight: 900;
-    padding: 0 0.25em;
+    padding: 0.15em 0.35em;
     border: 1px solid #666;
     color: #666;
     background-color: white;
-    font-size: 1.4em; /* I wish browsers wouldn't render monospaced fonts so small */
+    font-size: 1.25em; /* I wish browsers wouldn't render monospaced fonts so small */
 }
 
 /* make radio buttons look like pushbuttons, from http://viralpatel.net/blogs/css-radio-button-checkbox-background/ */
