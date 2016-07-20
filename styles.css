@@ -107,9 +107,22 @@ table {
     table-layout: auto;
     padding: 0 5px;
 }
-div.hands {
-    margin: 0 auto;
-    display: table;
+#submit {
+    display: block;
+    clear: both;
+    margin: 40px auto 0;
+
+    padding: 8px 8px;
+    outline: 1px solid #999;
+    min-width: 1em;
+    line-height: 1.5em;
+    background-color: #eee;
+    border: none;
+}
+#submit:active {
+   background-image: none;
+    background-color:#666;
+    color: white;
 }
 div.hand {
     float: left; /* just in case display: table/table-cell is not supported */
@@ -119,6 +132,10 @@ div.hand {
 div.options, div.result {
     display: inline-block;
     clear: both;
+}
+div.hands, div.options {
+    margin: 0 auto;
+    display: table;
 }
 .result {
     line-height: 1.55em;
