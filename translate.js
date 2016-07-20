@@ -91,7 +91,7 @@ function translateText(leftdirection, rightdirection) {
               't','y','u',
               'g','h','j'];
     var z = [ 'caps lock','a','s',
-              'shift','z','x',
+              'left shift','z','x',
               '','',' '];
     var space = [ ' ',' ',' ',
                   ' ',' ',' ',
@@ -146,10 +146,10 @@ function translateText(leftdirection, rightdirection) {
                       'enter','enter',''];
     var semicolon = [ 'o','p','[',
                       'l',';','\'',
-                      '.','/','shift'];
+                      '.','/','right shift'];
     var tick = [ 'p','[',']',
                  ';','\'','enter',
-                 '/','shift','shift'];
+                 '/','right ihift','right shift'];
     var comma = [ 'j','k','l',
                   'm',',','.',
                   ' ','',''];
@@ -157,7 +157,7 @@ function translateText(leftdirection, rightdirection) {
                    ',','.','/',
                    '','',''];
     var slash = [ 'l',';','',
-                   '.','/','shift',
+                   '.','/','right shift',
                    '','',''];
 
     // group keys by side of keyboard; space belongs to neither (or is it both? #deepthoughts)

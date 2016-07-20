@@ -125,6 +125,7 @@ div.options, div.result {
     padding: 0 0.25em;
     border: 1px solid #666;
     color: #666;
+    background-color: white;
     font-size: 1.4em; /* I wish browsers wouldn't render monospaced fonts so small */
 }
 
