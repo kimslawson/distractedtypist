@@ -350,6 +350,23 @@ for (var index=0, len=translate2.length; index<len; index++) {
     };
 };
 
+document.forms['translate'].elements['submit'].onclick = function() {
+    console.log("success!");
+    // check left hand buttons first
+    for (var indexinner=0, leninner=translate.length; indexinner<leninner; indexinner++) {
+        if (translate[indexinner].checked) {
+            var translateindex = indexinner; // remember that which is left
+        }
+    }
+    // then check right hand buttons
+    for (var indexinner=0, leninner=translate2.length; indexinner<leninner; indexinner++) {
+        if (translate2[indexinner].checked) {
+            var translate2index = indexinner; // and also that which is right
+        }
+    }
 
+    // call translate function with chosen cardinal directions
+    translateText(translateindex, translate2index);
+};
 
 
