@@ -13,7 +13,7 @@ This tool was built by [Kim Slawson](http://slawson.org/). Development involved 
 
 ## How can you help?
 1. **Test it!** I've used it on my phone (iPhone 5S) and my desktop computer in Chrome, but I’d love to hear how it works for you.
-2. **PLEASE, send me your accidental gibberish** to feed into it, and ()if you know it) which keys your fingers were on instead of the standard ASDF/JKL:. The more data I have to work with, the better this tool will get!
+2. **PLEASE, send me your accidental gibberish** to feed into it, and ()if you know it) which keys your fingers were on instead of the standard ASDF/JKL; — the more data I have to work with, the better this tool will get!
 
 ## Changelog:
 ###2016-07-20 Alpha release:
