@@ -14,6 +14,9 @@ body {
     font-family: 'Corben', cursive;
     font-family: 'Merriweather', serif;
 }
+p {
+  line-height: 1.75em;
+}
 
 /* all this for a dingbat in the footer? ya gotta have priorities... */ 
 @font-face {
@@ -138,7 +141,6 @@ div.hands, div.options {
     display: table;
 }
 .result {
-    line-height: 1.55em;
 }
 .result strong {
     font-weight: 900;
@@ -147,6 +149,8 @@ div.hands, div.options {
     color: #666;
     background-color: white;
     font-size: 1.25em; /* I wish browsers wouldn't render monospaced fonts so small */
+    border-radius: 3px;
+    margin-right: 1px;
 }
 
 /* make radio buttons look like pushbuttons, from http://viralpatel.net/blogs/css-radio-button-checkbox-background/ */
