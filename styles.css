@@ -143,14 +143,14 @@ div.hands, div.options {
 .result {
 }
 .result strong {
-    font-weight: 900;
-    padding: 0.15em 0.35em;
+    font-weight: 00;
+    padding: 0.15em 0.4em;
     border: 1px solid #666;
-    color: #666;
-    background-color: white;
+    color: white;
+    background-color: #666;
     font-size: 1.25em; /* I wish browsers wouldn't render monospaced fonts so small */
-    border-radius: 3px;
-    margin-right: 1px;
+    border-radius: 4px;
+    margin-right: 2px;
 }
 
 /* make radio buttons look like pushbuttons, from http://viralpatel.net/blogs/css-radio-button-checkbox-background/ */
